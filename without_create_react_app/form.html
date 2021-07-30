@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+            state = {
+                name: 'Gio',
+                age: 40
+            }
+            handleChange =  (e) => {
+                this.setState({
+                    name: e.target.value
+                })
+            }
+            handleSubmit = (e) => {
+                e.preventDefault();
+                console.log(this.state.name)
+            }
+            render(){
+                const {name} = this.state;
+                return (
+                    <div className='app-content'>
+                        <h1>My name is {name}</h1>
+                       {/*
+                        Why not using onClick on the button?
+                        onSubmit on the form means that both <enter>OR the click on the button are captured .
+                        */}
+                        <form onSubmit={this.handleSubmit}>
+                            <input type="text" onChange={this.handleChange}/>
+                            <button>Submit</button>
+                        </form>
+                    </div>
+                )
+            }
+        }
+        //using react-dom.development
+        ReactDOM.render(<App />, document.getElementById('app'))
+
+    </script>
+    
+</body>
+</html>

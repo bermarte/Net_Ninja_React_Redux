@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+        class App extends React.Component {
+            state = {
+                name: 'Gio',
+                age: 40
+            }
+            /*
+            //in classes we can define functions like that
+            handleClick(e){
+                console.log(e.target);
+                //this is undefined, use an arrow function, instead
+                console.log('this is here', this);
+            }
+            */
+
+            handleClick = (e) => {
+                this.setState({
+                    name: 'Jan',
+                    age: 29
+                })
+            }
+            handleMouseOver(e){
+                console.log(e.target, e.pageX);
+            }
+            handleCopy = (e) => {
+                console.log('test message')
+            }
+            // renders the template
+            //in this function React binds automatically 'this'
+            render(){
+                //destructuring
+                const {name, age} = this.state;
+                return (
+                    <div className='app-content'>
+                    <h1>Test doc</h1>
+                    <p>My name is {name} and I am {age}</p>
+                    <p>{ Math.random()*10 }</p>
+                    <button onClick={this.handleClick}>Click me</button>
+                    <button onMouseOver={this.handleMouseOver}>Hover me</button>
+                    <p onCopy={this.handleCopy}>What we think, we become</p>
+                    </div>
+                )
+            }
+        }
+        //using react-dom.development
+        ReactDOM.render(<App />, document.getElementById('app'))
+
+    </script>
+    
+</body>
+</html>

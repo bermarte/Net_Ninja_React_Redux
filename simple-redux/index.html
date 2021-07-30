@@ -1,0 +1,74 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <title>redux</title>
+</head>
+<!-- 
+https://stackoverflow.com/questions/41821427/how-to-use-redux-js-on-client-side-with-plain-javascript
+https://github.com/reduxjs/redux/blob/master/examples/counter-vanilla/index.html 
+https://egghead.io/lessons/react-redux-the-single-immutable-state-tree
+-->
+
+<body>
+    <script>
+        const {
+            createStore
+        } = Redux;
+
+        const initState = {
+            todos: [],
+            posts: []
+        }
+
+        function myreducer(state = initState, action) {
+            //console.log(action, state)
+            if (action.type === 'ADD_TODO') {
+                return {
+                    ...state,
+                    todos: [...state.todos, action.todo]
+                }
+            }
+
+            if (action.type === 'ADD_POST') {
+                return {
+                    //we need also posts
+                    ...state,
+                    posts: [...state.posts, action.post]
+                }
+            }
+
+        }
+
+        const store = createStore(myreducer);
+
+        store.subscribe(() => {
+            console.log('state updated');
+            console.log(store.getState());
+        })
+
+        //const todoAction = {type: 'ADD_TODO', todo: 'buy milk'}
+
+        //store.dispatch(todoAction)
+
+        store.dispatch({
+            type: 'ADD_TODO',
+            todo: 'buy milk'
+        })
+        store.dispatch({
+            type: 'ADD_TODO',
+            todo: 'sleep some more'
+        })
+        store.dispatch({
+            type: 'ADD_POST',
+            post: 'run for 20 km'
+        })
+        console.log('redux')
+    </script>
+
+</body>
+
+</html>
