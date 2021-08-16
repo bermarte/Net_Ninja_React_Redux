@@ -9,11 +9,11 @@ React, Redux & Firebase App Tutorial #10 - Nav Links & CSS
 - [x] 7 https://www.youtube.com/watch?v=EwzxT-ak_vg&pp    
 - [x] 8 https://www.youtube.com/watch?v=f4Lg-nzE0u8&pp    
 - [x] 9 https://www.youtube.com/watch?v=eU4E-wdJCRM&pp    
-- [ ] 10 https://www.youtube.com/watch?v=nFKZBeLWJm0    
-- [ ] 11 https://www.youtube.com/watch?v=hOQ7x_X2gIg    
-- [ ] 12 https://www.youtube.com/watch?v=sh6hZKt-jh0&pp    
-- [ ] 13 https://www.youtube.com/watch?v=Z4Yw5Wdht_k&pp    
-- [ ] 14 https://www.youtube.com/watch?v=apg98RIJfJo&pp    
+- [x] 10 https://www.youtube.com/watch?v=nFKZBeLWJm0    
+- [x] 11 https://www.youtube.com/watch?v=hOQ7x_X2gIg    
+- [x] 12 https://www.youtube.com/watch?v=sh6hZKt-jh0&pp    
+- [x] 13 https://www.youtube.com/watch?v=Z4Yw5Wdht_k&pp    
+- [x] 14 https://www.youtube.com/watch?v=apg98RIJfJo&pp    
 - [ ] 15 https://www.youtube.com/watch?v=z0QpTl5-0Bk&pp    
 - [ ] 16 https://www.youtube.com/watch?v=zMvjPEOjrbw&pp    
 - [ ] 17 https://www.youtube.com/watch?v=gf5bVfVlNUM&pp    
