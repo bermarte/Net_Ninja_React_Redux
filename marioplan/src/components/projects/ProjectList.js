@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectSummary from './ProjectSummary';
+import { Link } from 'react-router-dom';
 
 //pass redux state from the Dashboard
 //eg <ProjectList projects={projects} />
@@ -12,7 +13,11 @@ const ProjectList = ({projects}) => {
             {/* we may have no map, && works like and IF THEN */}
             {projects && projects.map(project => {
                 // returns JSX
-                return(<ProjectSummary project={project} key={project.id}/>)
+                return(
+                    <Link to={`/project/${project.id}`}>
+                        <ProjectSummary project={project} key={project.id}/>
+                    </Link>
+                )
             })}
         </div>
     );

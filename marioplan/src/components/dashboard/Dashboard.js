@@ -3,6 +3,8 @@ import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
 //glue library
 import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 class Dashboard extends Component {
     render() {
@@ -30,12 +32,18 @@ class Dashboard extends Component {
 
 //map redux state to props
 const mapStateToProps = (state) => {
+    console.log(state);
     // see rootReducer: project
     // and then see projectReducer: projects
 
     return{
-        projects: state.project.projects
+        projects: state.firestore.ordered.projects
     };
 };
 
-export default connect(mapStateToProps)(Dashboard);
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        { collection: 'projects'}  
+    ])
+)(Dashboard);
