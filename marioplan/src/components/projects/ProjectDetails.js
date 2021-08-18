@@ -8,7 +8,8 @@ function ProjectDetails(props) {
     // const id = props.match.params.id;
     const { project } = props;
     if (project) {
-        <div className="container section project-details">
+        return(
+            <div className="container section project-details">
             <div className="card z-depth-0">
                 <div className="card-content">
                     <span className="card-title">{ project.title  }</span>
@@ -20,6 +21,7 @@ function ProjectDetails(props) {
                 </div>
             </div>
         </div>
+        )
     }
     else {
         return (
